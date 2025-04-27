@@ -1,29 +1,32 @@
 # RealTimeLog
 
-[![CI Status](https://img.shields.io/travis/swlfigo/RealTimeLog.svg?style=flat)](https://travis-ci.org/swlfigo/RealTimeLog)
-[![Version](https://img.shields.io/cocoapods/v/RealTimeLog.svg?style=flat)](https://cocoapods.org/pods/RealTimeLog)
-[![License](https://img.shields.io/cocoapods/l/RealTimeLog.svg?style=flat)](https://cocoapods.org/pods/RealTimeLog)
-[![Platform](https://img.shields.io/cocoapods/p/RealTimeLog.svg?style=flat)](https://cocoapods.org/pods/RealTimeLog)
+iOS实时网页输出Log工具
 
-## Example
+基于 CocoaAsyncSokcet 搭建LocalServer
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+前端UI页面 [RealtimeLog FE](https://github.com/SerenitySpace/RealtimeLogViewerFE)
 
-## Requirements
+若对UI修改,打包后替换 Pod/Assets 下 WebBundle/web 文件
 
-## Installation
+Pod没有发布,可以使用本地相对引用路劲引入
 
-RealTimeLog is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'RealTimeLog'
+```shell
+pod 'RealTimeLog' , :path => '/Path/To/RealTimeLog/Podspec'
 ```
 
-## Author
 
-swlfigo, swlfigo@gmail.com
 
-## License
+## Usage
 
-RealTimeLog is available under the MIT license. See the LICENSE file for more info.
+```swift
+//默认端口8080,可自定义端口
+RealtimeLogMannger.shared.startServer()
+
+// 日志级别
+let levels = ["info", "warning", "error"]
+RealtimeLogMannger.shared.sendLog(level: level, message: message)
+
+
+//电脑浏览器访问手机ip:8080 即可查看实时Log前端页面
+```
+
