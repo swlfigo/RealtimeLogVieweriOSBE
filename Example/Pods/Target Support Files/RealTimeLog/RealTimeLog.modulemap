@@ -1,0 +1,6 @@
+framework module RealTimeLog {
+  umbrella header "RealTimeLog-umbrella.h"
+
+  export *
+  module * { export * }
+}

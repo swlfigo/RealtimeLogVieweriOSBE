@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'RealTimeLog_Example' do
+  pod 'RealTimeLog', :path => '../'
+
+  target 'RealTimeLog_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

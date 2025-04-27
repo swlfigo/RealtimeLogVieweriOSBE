@@ -1,0 +1,23 @@
+PODS:
+  - CocoaAsyncSocket (7.6.5)
+  - RealTimeLog (0.1.0):
+    - CocoaAsyncSocket
+
+DEPENDENCIES:
+  - RealTimeLog (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+
+EXTERNAL SOURCES:
+  RealTimeLog:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  RealTimeLog: 4b7cf2631286837e5bcd50b0be2bd5551f521592
+
+PODFILE CHECKSUM: 5ab2f702bd04701c4874087dde26839898d41257
+
+COCOAPODS: 1.16.2
