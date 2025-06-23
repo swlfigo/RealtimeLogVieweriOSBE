@@ -8,6 +8,7 @@
 
 import UIKit
 import RealTimeLog
+import OSLog
 class ViewController: UIViewController {
     
     private var logTimer: Timer?
@@ -41,8 +42,8 @@ class ViewController: UIViewController {
         logTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) {  _ in
             
             // 随机生成日志级别
-            let levels = ["info", "warning", "error"]
-            let level = levels.randomElement() ?? "info"
+            let levels = [OSLogType.info, OSLogType.error,OSLogType.fault]
+            let level = levels.randomElement() ?? .info
             
             // 生成随机日志消息
             let messages = [
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
             let message = messages.randomElement() ?? "未知消息"
             
             // 发送日志
-            RealtimeLogMannger.shared.sendLog(level: level, message: message)
+            RealtimeLogMannger.shared.sendLog(logLevel: level, message: message)
         }
     }
     

@@ -18,8 +18,14 @@ public class RealtimeLogMannger {
         httpServer?.start()
     }
     
-    public func sendLog(level: String, message: String) {
-        httpServer?.sendLog(level: level, message: message)
+    public func sendLog(logLevel level:OSLogType, message: String) {
+        var levelInfo = "info"
+        if level == .fault {
+            levelInfo = "warning"
+        } else if level == .error {
+            levelInfo = "error"
+        }
+        httpServer?.sendLog(level: levelInfo, message: message)
     }
     
     public func stopServer(){
