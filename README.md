@@ -2,17 +2,23 @@
 
 iOS实时网页输出Log工具
 
-基于 CocoaAsyncSokcet 搭建LocalServer
+基于 Apple Network.framework (NWListener / NWConnection) 搭建 LocalServer，无第三方依赖
 
 前端UI页面 [RealtimeLog FE](https://github.com/SerenitySpace/RealtimeLogViewerFE)
 
 若对UI修改,打包后替换 Pod/Assets 下 WebBundle/web 文件
 
-Pod没有发布,可以使用本地相对引用路劲引入
+### 安装
 
 ```shell
-pod 'RealTimeLog' , :path => '/Path/To/RealTimeLog/Podspec'
+# Git Tag 引用
+pod 'RealTimeLog', :git => 'https://github.com/SerenitySpace/RealtimeLogVieweriOSBE.git', :tag => '1.1.0'
+
+# 或本地路径引用
+pod 'RealTimeLog', :path => '/Path/To/RealtimeLogVieweriOSBE'
 ```
+
+> 要求 iOS 12.0+
 
 
 

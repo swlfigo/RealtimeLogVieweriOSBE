@@ -84,8 +84,12 @@ class RealtimeHttpServer {
                     print("HTTP服务器已启动，监听端口: \(port)")
                 }
             case .failed(let error):
-                print("服务器监听失败: \(error)")
+                print("服务器监听失败: \(error)，2秒后重试...")
                 self?.listener?.cancel()
+                self?.listener = nil
+                self?.queue.asyncAfter(deadline: .now() + 2) {
+                    self?.start()
+                }
             default:
                 break
             }
